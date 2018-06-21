@@ -34,7 +34,7 @@ net.load_state_dict(torch.load('ssd300_mAP_77.43_v2.pth', map_location = lambda 
 transform = BaseTransform(net.size, (104/256.0, 117/256.0, 123/256.0)) # We create an object of the BaseTransform class, a class that will do the required transformations so that the image can be the input of the neural network.
 
 # Doing some Object Detection on a video
-reader = imageio.get_reader('funny_dog.mp4') # We open the video.
+reader = imageio.get_reader('Input.mp4') # We open the video.
 fps = reader.get_meta_data()['fps'] # We get the fps frequence (frames per second).
 writer = imageio.get_writer('output.mp4', fps = fps) # We create an output video with this same fps frequence.
 for i, frame in enumerate(reader): # We iterate on the frames of the output video:
